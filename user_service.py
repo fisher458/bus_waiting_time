@@ -8,3 +8,5 @@ if __name__ == "__main__":
     time_error, lenth = probability.detect(station_name,direction,estimate_time)
     mean, std = probability.cal(time_error)
     print(f"預估等待時間為{estimate_time+mean}分鐘")
+
+    
