@@ -37,7 +37,7 @@ def detect(stop_name, direction=0,wait_time = 3,start_point=0):
         
         time_gap_halfmin = (time_gap.total_seconds() )/ 30
         estimate_time = df_filtered.iloc[idx]['EstimateTime']
-        e = math.ceil(abs(estimate_time - time_gap_halfmin))/2
+        e = abs(estimate_time - time_gap_halfmin)/2
         time_list.append(e)
         
     return time_list, len(df_filtered)
@@ -51,8 +51,8 @@ if __name__ == "__main__":
 
     
 def cal(data):
-    mean_val = math.ceil(np.mean(data))
-    std_sample = math.ceil(np.std(data, ddof=1))
+    mean_val = np.mean(data)
+    std_sample = np.std(data, ddof=1)
     
     return mean_val,std_sample
 
